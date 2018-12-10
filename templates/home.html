@@ -1,0 +1,92 @@
+<!-- This passing the main layout of the pages from the layout.html file -->
+{% extends "layout.html" %}
+
+<!-- This indicates the Block set aside in the layout html file that we are changing -->
+<!-- Most of this html is from bootstrap -->
+{% block content %}
+  <main>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Welcome to the site</h1>
+        <p class="lead">place holder for the site discription</p>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Store</h1>
+        <p class="lead">place holder for disclaimer about the product sales.</p>
+      </div>
+    </div>
+    <div class=container>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/product">
+              <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
+            </a> 
+            <div class="caption">
+              <p>Sorghum grain.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/product">
+              <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
+            </a> 
+            <div class="caption">
+              <p>Sorghum flower.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/product">
+              <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
+            </a> 
+            <div class="caption">
+              <p>Sorghum seeds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">About Us</h1>
+        <p class="lead">Place holder for the company descriptions/message.</p>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Reqest newsletter
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Newsletter Request form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock content %}
