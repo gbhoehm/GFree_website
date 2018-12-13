@@ -5,53 +5,50 @@
 <!-- Most of this html is from bootstrap -->
 {% block content %}
   <main>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+     {% for space in spacing %}
+        <p>{space}</p>
+     {% endfor %}
+    </div>
+    <div class="jumbotron jumbotron-fluid" style="background-color:rgb(142, 217, 240)">
       <div class="container">
         <h1 class="display-4">Welcome to the site</h1>
         <p class="lead">place holder for the site discription</p>
       </div>
     </div>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" style="background-color:rgb(142, 217, 240)">
       <div class="container">
         <h1 class="display-4">Store</h1>
         <p class="lead">place holder for disclaimer about the product sales.</p>
       </div>
     </div>
+    
     <div class=container>
       <div class="row">
+        {% for image_name in image_names %}
+
         <div class="col-md-4">
           <div class="thumbnail">
             <a href="/product">
-              <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
+              <img src="{{url_for('send_image', filename=image_name)}}" alt="Lights" style="width:100%" height="250" width="300">
+              
             </a> 
+            {% if image_name == 'SorghumPlant.jpg' %}
             <div class="caption">
               <p>Sorghum grain.</p>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <a href="/product">
-              <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
-            </a> 
+            {% else %}
             <div class="caption">
-              <p>Sorghum flower.</p>
+                <p>Sorghum flour</p>
             </div>
+          {% endif %}
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <a href="/product">
-              <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
-            </a> 
-            <div class="caption">
-              <p>Sorghum seeds.</p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
-    <div class="jumbotron jumbotron-fluid">
+    
+    <div class="jumbotron jumbotron-fluid" style="background-color:rgb(142, 217, 240)">
       <div class="container">
         <h1 class="display-4">About Us</h1>
         <p class="lead">Place holder for the company descriptions/message.</p>
