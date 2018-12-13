@@ -7,17 +7,19 @@
     <!-- This is Jinja code for reference-->
     <!-- for loop that scans through the product dictionary from the python program, displaying the data as read -->
     <!-- does not currently work correctly -->
-    {% for product in products %}
+    {% for image_name in image_names %}
+    {% if image_name == 'flour-1581967_1920.jpg' %}
       <div class="row">
-        <div class="col-md-4">
+        <div class=".center">
           <div class="thumbnail">
-            <img src="{{ products.image }}" alt="Lights" style="width:100%">
+            <img src="{{url_for('send_image', filename=image_name)}}" alt="Lights"  height="600" width="900">
             <div class="caption">
-              <p>{{ product.description }}</p>
+              <p> product descrition </p>
             </div>
           </div>
         </div>
       </div>
+    {% endif %}
     {% endfor %}    
 
     <!-- for loop that scans through the reviews dictionary from the python program, displaying the data as read -->

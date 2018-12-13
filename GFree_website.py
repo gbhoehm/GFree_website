@@ -44,33 +44,12 @@ reviews = [
     }
 ]
 
-# product data for the product page.  
-# needs a different approach as in it will need multiple dictionary must likely. 
-products = [
-    {
-        "image":"sorghum grain",
-        "description": "placeholder"
-    },
-    {
-        "image":"sorghum flower",
-        "description": "placeholder"
-    },
-    {
-        "image":"sorghum seeds",
-        "description": "placeholder"
-    }
-]
 
 spacing = [" "," "," "," "," ",""]
 
 @app.route("/upload", methods=["POST"])
 def upload():
     folder_name = request.form['superhero']
-    '''
-    # this is to verify that folder to upload to exists.
-    if os.path.isdir(os.path.join(APP_ROOT, 'files/{}'.format(folder_name))):
-        print("folder exist")
-    '''
     target = os.path.join(APP_ROOT, 'files/{}'.format(folder_name))
     print(target)
     if not os.path.isdir(target):
@@ -111,7 +90,9 @@ def send_image(filename):
 # Setting up the product page domain and then calling the product page passing in variables for the Jinja code
 @app.route("/product")
 def about():
-    return render_template('product.html', title = "product", reviews = reviews, products = products)
+    image_names = os.listdir('./images')
+    print(image_names)
+    return render_template('product.html', title = "product", reviews = reviews, image_names = image_names)
 
 
     
