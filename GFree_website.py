@@ -5,42 +5,56 @@ app = Flask(__name__)
 APP_ROOT =  os.path.dirname(os.path.abspath(__file__))
 
 # Some data to test the review section in the product page
-reviews = [
+reviews_flour = [
     {
-        "reviewer": "gage boehm",
         "title": "sorghum flour post 1",
-        "content": "It's greate stuff",
-        "dataposted": "november 28, 2018"
+        "content": "It's great stuff",
     },
     {
-        "reviewer": "salem boehm",
         "title": "sorghum flour post 2",
         "content": "It's okay stuff",
-        "dataposted": "november 29, 2018"
     },
     {
-        "reviewer": "salem boehm",
         "title": "sorghum flour post 2",
         "content": "It's okay stuff",
-        "dataposted": "november 29, 2018"
     },
     {
-        "reviewer": "salem boehm",
         "title": "sorghum flour post 2",
         "content": "It's okay stuff",
-        "dataposted": "november 29, 2018"
     },
     {
-        "reviewer": "salem boehm",
         "title": "sorghum flour post 2",
         "content": "It's okay stuff",
-        "dataposted": "november 29, 2018"
     },
     {
-        "reviewer": "salem boehm",
         "title": "sorghum flour post 2",
         "content": "It's okay stuff",
-        "dataposted": "november 29, 2018"
+    }
+]
+reviews_grain = [
+    {
+        "title": "sorghum grain post 1",
+        "content": "It's great stuff",
+    },
+    {
+        "title": "sorghum grain post 2",
+        "content": "It's okay stuff",
+    },
+    {
+        "title": "sorghum grain post 2",
+        "content": "It's okay stuff",
+    },
+    {
+        "title": "sorghum grain post 2",
+        "content": "It's okay stuff",
+    },
+    {
+        "title": "sorghum grain post 2",
+        "content": "It's okay stuff",
+    },
+    {
+        "title": "sorghum grain post 2",
+        "content": "It's okay stuff",
     }
 ]
 
@@ -88,12 +102,18 @@ def send_image(filename):
     return send_from_directory("images", filename)
 
 # Setting up the product page domain and then calling the product page passing in variables for the Jinja code
-@app.route("/product")
-def about():
+@app.route("/product_flour")
+def about_1():
     image_names = os.listdir('./images')
     print(image_names)
-    return render_template('product.html', title = "product", reviews = reviews, image_names = image_names)
+    return render_template('product_flour.html', title = "product", reviews = reviews_flour, image_names = image_names)
 
+# Setting up the product page domain and then calling the product page passing in variables for the Jinja code
+@app.route("/product_grain")
+def about_2():
+    image_names = os.listdir('./images')
+    print(image_names)
+    return render_template('product_grain.html', title = "product", reviews = reviews_grain, image_names = image_names)
 
     
 # This allows for the website to be reloaded and see the changes with out having to reset the website eac change.
