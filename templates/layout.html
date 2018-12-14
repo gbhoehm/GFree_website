@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='social_links.css') }}">
-    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='center.css') }}">
 
+    <!-- giving the webpage the appropriate name in the tabs area of a web browser -->
+    <!-- Jinja code is for the over web page in the system to update the name correctly-->
     {% if title %}
     <title>GFree products - {{ title }}</title>
     {% else %}
@@ -20,6 +21,8 @@
     
 </head>
 <body style="background-color: lightgray">
+
+    <!-- setting up the navigation bar and its components with the appropriate links or jumps-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgb(142, 217, 240)">
       <a class="navbar-brand" href="/">GFree</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,6 +46,8 @@
         </ul>
     </div>
     </nav>
+
+    <!-- Jinja code for the two pages, homepage and product page, to place the correct HTML code dynamically-->
     <main role="main" class="container">
       <div class="row">
         <div class=".center">
@@ -50,6 +55,8 @@
         </div>
       </div>
     </main>
+
+    <!-- container for all the social media links, this is just an example no functional links-->
     <footer class="container">
         <ul>
             <button type="button" class="btn btn-outline-light btn-lg">

@@ -4,7 +4,7 @@ from flask import Flask, render_template, url_for, request, send_from_directory
 app = Flask(__name__)
 APP_ROOT =  os.path.dirname(os.path.abspath(__file__))
 
-# Some data to test the review section in the product page
+# Some data to test the review section in the product pages
 reviews_flour = [
     {
         "title": "sorghum flour post 1",
@@ -15,21 +15,9 @@ reviews_flour = [
         "content": "It's okay stuff",
     },
     {
-        "title": "sorghum flour post 2",
-        "content": "It's okay stuff",
+        "title": "Great product",
+        "content": "Big fan of want out guys are dong with this fantastic flour",
     },
-    {
-        "title": "sorghum flour post 2",
-        "content": "It's okay stuff",
-    },
-    {
-        "title": "sorghum flour post 2",
-        "content": "It's okay stuff",
-    },
-    {
-        "title": "sorghum flour post 2",
-        "content": "It's okay stuff",
-    }
 ]
 reviews_grain = [
     {
@@ -41,28 +29,18 @@ reviews_grain = [
         "content": "It's okay stuff",
     },
     {
-        "title": "sorghum grain post 2",
-        "content": "It's okay stuff",
+        "title": "Great product",
+        "content": "Big fan of want out guys are dong with this fantastic grain",
     },
-    {
-        "title": "sorghum grain post 2",
-        "content": "It's okay stuff",
-    },
-    {
-        "title": "sorghum grain post 2",
-        "content": "It's okay stuff",
-    },
-    {
-        "title": "sorghum grain post 2",
-        "content": "It's okay stuff",
-    }
 ]
 
 
 spacing = [" "," "," "," "," ",""]
 
+# This routine is only used to get files containing images load into the webpage
 @app.route("/upload", methods=["POST"])
 def upload():
+    """ Load in the desired images files """
     folder_name = request.form['superhero']
     target = os.path.join(APP_ROOT, 'files/{}'.format(folder_name))
     print(target)
